@@ -1,7 +1,7 @@
 <?php
 require_once("Persona.php");
 
-$objetoPersona = new Persona("");
+$objetoPersona = new Persona("112",1111,"Brayan","brayan@gmail.com","Maculino","",0,0);
 $usuarios = $objetoPersona->getUsuarios();
 
 // Verificar si se recibió el parámetro "id" en la URL para eliminar una persona
@@ -35,21 +35,33 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["eliminar"])) {
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Cedula</th>
                 <th>Nombre</th>
+                <th>Correo</th>
+                <th>Sexo</th>
+                <th>Descripcion</th>
+                <th>Empresa</th>
+                <th>RH</th>
                 <th>Editar</th>
                 <th>Borrar</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($usuarios as $usuario) : ?>
-                <tr>
-                    <td><?php echo $usuario['id']; ?></td>
-                    <td><?php echo $usuario['nombre']; ?></td>
-                    <td><a href="Editar.php?id=<?php echo $usuario['id']; ?>">Editar</a></td>
-                    <td><a href="index.php?eliminar=<?php echo $usuario['id']; ?>">Eliminar</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+    <?php foreach ($usuarios as $usuario) : ?>
+        <tr>
+            <td><?php echo $usuario['id']; ?></td>
+            <td><?php echo $usuario['cedula']; ?></td>
+            <td><?php echo $usuario['usuario_nombre']; ?></td>
+            <td><?php echo $usuario['email']; ?></td>
+            <td><?php echo $usuario['sexo']; ?></td>
+            <td><?php echo $usuario['descripcion']; ?></td>
+            <td><?php echo $usuario['empresa_nombre']; ?></td>
+            <td><?php echo $usuario['rh_nombre']; ?></td>
+            <td><a href="Editar.php?id=<?php echo $usuario['id']; ?>">Editar</a></td>
+            <td><a href="index.php?eliminar=<?php echo $usuario['id']; ?>">Eliminar</a></td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
     </table>
 </body>
 </html>
