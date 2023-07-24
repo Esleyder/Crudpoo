@@ -2,10 +2,10 @@
 require_once("Persona.php");
 require_once("Empresa.php");
 require_once("Rh.php");
-
+//Objeto Empresa
 $objetoEmpresa =new Empresa();
 $empresa = $objetoEmpresa->getEmpresas();
-
+//objeto RH
 $objetoRh=new Rh();
 $rh=$objetoRh->getRh();
 
