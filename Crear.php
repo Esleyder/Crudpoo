@@ -1,7 +1,7 @@
 <?php
-require_once("Persona.php");
-require_once("Empresa.php");
-require_once("Rh.php");
+require_once("./Clases/Persona.php");
+require_once("./Clases/Empresa.php");
+require_once("./Clases/Rh.php");
 //Objeto Empresa
 $objetoEmpresa =new Empresa();
 $empresa = $objetoEmpresa->getEmpresas();

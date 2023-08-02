@@ -1,25 +1,10 @@
 <?php
-require_once("Persona.php");
+require_once("./Clases/Persona.php");
 
 $objetoPersona = new Persona("112",1111,"Brayan","brayan@gmail.com","Maculino","",0,0);
 $usuarios = $objetoPersona->getUsuarios();
 
-// Verificar si se recibió el parámetro "id" en la URL para eliminar una persona
-if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["eliminar"])) {
-    // Obtener el ID del registro a eliminar
-    $id = $_GET["eliminar"];
-
-    // Eliminar la persona con el ID proporcionado
-    $resDelete = $objetoPersona->eliminarPersona($id);
-
-    if ($resDelete) {
-        echo "Persona eliminada con éxito.";
-        header("Location: index.php");
-        exit; // Importante: asegúrate de salir del script después de la redirección
-    } else {
-        echo "Error al eliminar la persona.";
-    }
-}
+require_once("Eliminar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["eliminar"])) {
 </head>
 <body>
     <h1>Listado de Personas</h1>
-    <a href="Crear.php"><input type="button" value="Crear Usuario"></a>
+    <a href="./Crear.php"><input type="button" value="Crear Usuario"></a>
     <table border="1px" width="500px" height="200px">
         <thead>
             <tr>

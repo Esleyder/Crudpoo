@@ -1,7 +1,7 @@
 <?php
-require_once("Persona.php");
-require_once("Empresa.php");
-require_once("Rh.php");
+require_once("./Clases/Persona.php");
+require_once("./Clases/Empresa.php");
+require_once("./Clases/Rh.php");
 
 // Verificamos si se ha enviado un ID válido a través de la URL
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {

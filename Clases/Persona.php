@@ -1,5 +1,5 @@
 <?php 
- require_once("Conexion.php");
+ require_once("./Conexion/Conexion.php");
  //Clase Persona extiende de la clase conexion
  class Persona extends Conexion {
      //Atributo Protected
